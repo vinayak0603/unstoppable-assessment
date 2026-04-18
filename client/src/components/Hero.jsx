@@ -11,64 +11,8 @@ const Hero = () => {
             {/* Dark gradient overlay to ensure text visibility against the background */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#030303] via-[#030303]/80 to-transparent z-0 pointer-events-none"></div>
 
-            {/* Navbar */}
-            <header className="relative z-20 flex items-center justify-between px-5 md:px-12 lg:px-20 py-5 md:py-6">
-                {/* Logo */}
-                <div className="flex flex-col cursor-pointer">
-                    <div className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight flex items-center">
-                        <span className="text-[#da251d]">U</span>
-                        <span className="text-white">nstoppable</span>
-                    </div>
-                    <div className="text-[8px] md:text-[9px] lg:text-[10px] tracking-[0.25em] text-gray-300 mt-1 pl-1">
-                        CREATIVE AGENCY
-                    </div>
-                </div>
-
-                {/* Nav Links - Desktop */}
-                <nav className="hidden lg:flex items-center gap-10 text-[15px] text-gray-300">
-                    <a href="#" className="hover:text-white transition-colors">Our Solutions</a>
-                    <a href="#" className="hover:text-white transition-colors">Why Us</a>
-                    <a href="#" className="hover:text-white transition-colors">Clientele</a>
-                    <a href="#" className="hover:text-white transition-colors">Communities</a>
-                </nav>
-
-                {/* Auth Buttons - Desktop */}
-                <div className="hidden md:flex items-center gap-4">
-                    <button className="text-white text-sm px-6 py-2 rounded-full border border-white/20 hover:bg-white/10 transition-colors">
-                        Login
-                    </button>
-                    <button className="bg-[#3a1111] text-white text-sm px-5 py-2 rounded-full flex items-center gap-2 hover:bg-[#4d1616] transition-colors border border-transparent">
-                        Register
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none">
-                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                        </svg>
-                    </button>
-                </div>
-
-                {/* Hamburger - Mobile */}
-                <button className="md:hidden flex flex-col gap-1.5 p-2" onClick={() => setMenuOpen(!menuOpen)}>
-                    <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-                    <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`}></span>
-                    <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
-                </button>
-            </header>
-
-            {/* Mobile Menu Drawer */}
-            {menuOpen && (
-                <div className="md:hidden absolute top-[72px] left-0 right-0 z-30 bg-[#030303]/95 backdrop-blur-md border-b border-white/10 px-5 py-6 flex flex-col gap-4">
-                    <a href="#" className="text-gray-300 hover:text-white transition-colors text-base">Our Solutions</a>
-                    <a href="#" className="text-gray-300 hover:text-white transition-colors text-base">Why Us</a>
-                    <a href="#" className="text-gray-300 hover:text-white transition-colors text-base">Clientele</a>
-                    <a href="#" className="text-gray-300 hover:text-white transition-colors text-base">Communities</a>
-                    <div className="flex flex-col gap-3 pt-2 border-t border-white/10">
-                        <button className="text-white text-sm px-6 py-2.5 rounded-full border border-white/20 hover:bg-white/10 transition-colors w-full">Login</button>
-                        <button className="bg-[#3a1111] text-white text-sm px-5 py-2.5 rounded-full flex items-center justify-center gap-2 hover:bg-[#4d1616] transition-colors w-full">Register</button>
-                    </div>
-                </div>
-            )}
-
             {/* Hero Content */}
-            <main className="relative z-10 flex-grow flex flex-col justify-center px-5 md:px-12 lg:px-20 max-w-[65rem] mt-5 pb-6">
+            <main className="relative z-10 flex-grow flex flex-col justify-center px-5 md:px-12 lg:px-20 max-w-[65rem] mt-20 md:mt-24 pb-6">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[5.2rem] font-bold text-white leading-[1.1] tracking-tight mb-4 md:mb-6">
                     Your St<span className="text-[#da251d] font-serif italic font-normal tracking-tight -ml-1 pr-1">ra</span>tegic Growth<br />
                     Partner in Business

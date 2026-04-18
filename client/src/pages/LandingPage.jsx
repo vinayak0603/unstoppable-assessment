@@ -1,4 +1,5 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import TrustedBy from '../components/TrustedBy';
 import TruePartner from '../components/TruePartner';
@@ -12,6 +13,7 @@ import Footer from '../components/Footer';
 const LandingPage = () => {
     return (
         <div className="bg-[#050505] text-white min-h-screen">
+            <Navbar />
             <Hero />
             <TrustedBy />
             <TruePartner />
