@@ -1,31 +1,61 @@
 import React from 'react';
+import './OurSolutionsHero.css';
+
 
 const OurSolutionsHero = () => {
     return (
         <div className="relative min-h-screen bg-[#000000] flex flex-col font-sans overflow-hidden">
-            {/* Grid Background */}
-            <div 
-                className="absolute inset-0 z-0 pointer-events-none opacity-50"
+            {/* 3-Column Background Structure */}
+            <div className="absolute inset-0 z-[1] flex pointer-events-none">
+                {/* 1st Part - Left (33.33%) */}
+                <div className="w-1/3 h-full relative" style={{ WebkitMaskImage: 'linear-gradient(to right, black 70%, transparent 100%)', maskImage: 'linear-gradient(to right, black 70%, transparent 100%)' }}>
+                    <div
+                        className="absolute inset-0 opacity-[0.8]"
+                        style={{
+                            backgroundSize: '50px 50px',
+                            backgroundImage: `
+                                linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+                                linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px)
+                            `
+                        }}
+                    />
+                </div>
+                {/* 2nd Part - Middle (33.33%) - No Grid */}
+                <div className="w-1/3 h-full relative"></div>
+                {/* 3rd Part - Right (33.33%) */}
+                <div className="w-1/3 h-full relative" style={{ WebkitMaskImage: 'linear-gradient(to left, black 70%, transparent 100%)', maskImage: 'linear-gradient(to left, black 70%, transparent 100%)' }}>
+                    <div
+                        className="absolute inset-0 opacity-[0.8]"
+                        style={{
+                            backgroundSize: '50px 50px',
+                            backgroundImage: `
+                                linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+                                linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px)
+                            `
+                        }}
+                    />
+                </div>
+            </div>
+
+            {/* Left Halogen Beam */}
+            <div
+                className="absolute inset-0 z-[2] pointer-events-none opacity-90 mix-blend-screen halogen-blink-anim"
                 style={{
-                    backgroundSize: '40px 40px',
-                    backgroundImage: `
-                        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px)
-                    `
+                    background: 'conic-gradient(from 0deg at 0% 100%, transparent 15deg, rgba(180, 20, 20, 0.8) 35deg, rgba(180, 20, 20, 0.8) 55deg, transparent 80deg)',
+                    WebkitMaskImage: 'radial-gradient(100% 100% at 0% 100%, black 10%, transparent 80%)',
+                    maskImage: 'radial-gradient(100% 100% at 0% 100%, black 10%, transparent 80%)',
+                    filter: 'blur(35px)'
                 }}
             />
 
-            {/* Subtle red shades from bottom corners */}
-            <div 
-                className="absolute bottom-0 left-0 w-full md:w-2/3 h-2/3 z-0 pointer-events-none"
+            {/* Right Halogen Beam */}
+            <div
+                className="absolute inset-0 z-[2] pointer-events-none opacity-90 mix-blend-screen halogen-blink-anim"
                 style={{
-                    background: 'radial-gradient(circle at bottom left, rgba(140, 20, 20, 0.3) 0%, rgba(0, 0, 0, 0) 60%)'
-                }}
-            />
-            <div 
-                className="absolute bottom-0 right-0 w-full md:w-2/3 h-2/3 z-0 pointer-events-none"
-                style={{
-                    background: 'radial-gradient(circle at bottom right, rgba(140, 20, 20, 0.3) 0%, rgba(0, 0, 0, 0) 60%)'
+                    background: 'conic-gradient(from 270deg at 100% 100%, transparent 10deg, rgba(180, 20, 20, 0.8) 35deg, rgba(180, 20, 20, 0.8) 55deg, transparent 75deg)',
+                    WebkitMaskImage: 'radial-gradient(100% 100% at 100% 100%, black 10%, transparent 80%)',
+                    maskImage: 'radial-gradient(100% 100% at 100% 100%, black 10%, transparent 80%)',
+                    filter: 'blur(35px)'
                 }}
             />
 
@@ -47,7 +77,7 @@ const OurSolutionsHero = () => {
                     Scroll to know more
                 </span>
                 <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-90">
-                    <path d="M1 1L7 7L13 1" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M1 1L7 7L13 1" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
             </div>
         </div>

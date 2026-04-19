@@ -1,0 +1,223 @@
+.communities-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #000000;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─────────────────────────────────────────────────
+   BASE SHADE
+   Key: bright red core → fast falloff → transparent
+   Low blur keeps each circle visually distinct
+────────────────────────────────────────────────── */
+.shade {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle,
+      #d40000 0%,
+      #b50000 18%,
+      #880000 36%,
+      rgba(80, 0, 0, 0.35) 55%,
+      transparent 70%);
+  filter: blur(18px);
+}
+
+/* ─────────────────────────────────────────────────
+   SHADE 1 — LEFT
+   Image 1: tiny sliver peeking from left edge, mid-height
+   Image 2: large sphere, left-clipped, vertically centered
+   Animation: 8 s total  (3 s hold → 1 s in → 3 s hold → 1 s out)
+   Percentages: 0–37.5% = state1 | 37.5–50% = transition in
+                50–87.5% = state2 | 87.5–100% = transition out
+────────────────────────────────────────────────── */
+.shade-left {
+  animation: anim-shade-left 8s ease-in-out infinite;
+}
+
+@keyframes anim-shade-left {
+
+  0%,
+  37.5% {
+    width: 400px;
+    height: 400px;
+    left: -280px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.8;
+  }
+
+  45%,
+  83.5% {
+    width: 400px;
+    height: 400px;
+    left: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+  }
+
+  90.75% {
+    width: 400px;
+    height: 400px;
+    left: -280px;
+    top: 30%;
+    transform: translateY(-50%);
+    opacity: 0.8;
+  }
+
+  100% {
+    width: 400px;
+    height: 400px;
+    left: -280px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.8;
+  }
+}
+
+/* ─────────────────────────────────────────────────
+   SHADE 2 — TOP CENTER-RIGHT
+   Image 1: small glow half-hidden at top-right (≈65% x, off top)
+   Image 2: large sphere clipped at top, center ≈ 58% from left
+             — separated from left sphere by visible black gap
+────────────────────────────────────────────────── */
+.shade-top-right {
+  animation: anim-shade-top-right 8s ease-in-out infinite;
+}
+
+@keyframes anim-shade-top-right {
+
+  0%,
+  37.5% {
+    width: 400px;
+    height: 400px;
+    top: -260px;
+    left: 60%;
+    transform: translateX(-50%);
+    opacity: 0.55;
+  }
+
+  45%,
+  83.5% {
+    width: 400px;
+    height: 400px;
+    top: 5px;
+    left: 58%;
+    transform: translateX(-50%);
+    opacity: 1;
+  }
+
+  90.75% {
+    width: 400px;
+    height: 400px;
+    top: -260px;
+    left: 70%;
+    transform: translateX(-50%);
+    opacity: 0.55;
+  }
+
+  100% {
+    width: 400px;
+    height: 400px;
+    top: -260px;
+    left: 60%;
+    transform: translateX(-50%);
+    opacity: 0.55;
+  }
+}
+
+/* ─────────────────────────────────────────────────
+   SHADE 3 — BOTTOM RIGHT
+   Image 1: tiny glow mostly off-screen at bottom-right corner
+   Image 2: large sphere clipped at bottom + right edges
+            — diagonally separated from top-right sphere
+────────────────────────────────────────────────── */
+.shade-bottom-right {
+  animation: anim-shade-bottom-right 8s ease-in-out infinite;
+}
+
+@keyframes anim-shade-bottom-right {
+
+  0%,
+  37.5% {
+    width: 400px;
+    height: 400px;
+    bottom: -250px;
+    right: -25px;
+    opacity: 0.65;
+  }
+
+  45%,
+  83.5% {
+    width: 400px;
+    height: 400px;
+    bottom: -80px;
+    right: 70px;
+    opacity: 1;
+  }
+
+  90.75% {
+    width: 400px;
+    height: 400px;
+    bottom: -250px;
+    right: -25px;
+    opacity: 0.65;
+  }
+
+  100% {
+    width: 400px;
+    height: 400px;
+    bottom: -250px;
+    right: -60px;
+    opacity: 0.65;
+  }
+}
+
+/* ─────────────────────────────────────────────────
+   HERO TEXT
+────────────────────────────────────────────────── */
+.communities-hero-text {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  user-select: none;
+}
+
+.communities-hero-text h1 {
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  color: #ffffff;
+  font-size: 60px;
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+
+.communities-hero-text h1 .sub-dot {
+  font-size: 0.45em;
+  vertical-align: sub;
+  line-height: 0;
+}
+
+@media (max-width: 900px) {
+  .communities-hero-text h1 {
+    font-size: 42px;
+  }
+  .hero-shades-container {
+    transform: scale(0.7);
+  }
+}
+
+@media (max-width: 600px) {
+  .communities-hero-text h1 {
+    font-size: 28px;
+  }
+  .hero-shades-container {
+    transform: scale(0.45);
+  }
+}

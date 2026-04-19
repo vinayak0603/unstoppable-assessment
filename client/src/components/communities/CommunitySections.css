@@ -1,0 +1,36 @@
+.uneven-circle-spin {
+  /* Slightly uneven shape to make it organic */
+  border-radius: 60% 40% 45% 55% / 55% 45% 60% 40%;
+  animation: uneven-spin 8s ease-in-out infinite;
+}
+
+/* 
+   Animation Cycle: 8s total
+   0% - 37.5%: Hold for 3s at 0deg
+   37.5% - 50%: Spin to 180deg over 1s
+   50% - 87.5%: Hold for 3s at 180deg
+   87.5% - 100%: Spin to 360deg over 1s
+*/
+@keyframes uneven-spin {
+  0%, 37.5% {
+    transform: rotate(0deg) scale(1);
+  }
+  50%, 87.5% {
+    transform: rotate(180deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+/* Sweep animation for the community button */
+.btn-sweep {
+  background: linear-gradient(to top right, #bc0000 50%, transparent 50%);
+  background-size: 250% 250%;
+  background-position: 100% 0%; /* Start position: top right (transparent part is visible) */
+  transition: background-position 0.5s ease-out;
+}
+
+.btn-sweep:hover {
+  background-position: 0% 100%; /* End position: bottom left (red part fills the button) */
+}

@@ -1,0 +1,16 @@
+.halogen-blink-anim {
+  animation: halogen-blink 5s ease-in-out infinite;
+}
+
+/* 
+  Total Cycle: 5s
+  0% - 60% (0s to 3s): Stay ON solidly for 3 seconds
+  60% - 100% (3s to 5s): Blink ON/OFF twice over 2 seconds
+*/
+@keyframes halogen-blink {
+  0%, 60% { opacity: 0.9; }      /* Hold solid */
+  70% { opacity: 0.1; }          /* Fade out slowly (Blink 1) */
+  80% { opacity: 0.9; }          /* Fade in slowly */
+  90% { opacity: 0.1; }          /* Fade out slowly (Blink 2) */
+  100% { opacity: 0.9; }         /* Fade back to solid */
+}

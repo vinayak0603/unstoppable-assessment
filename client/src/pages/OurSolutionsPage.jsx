@@ -1,16 +1,14 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
 import OurSolutionsHero from '../components/OurSolutionsHero';
 import BrandingStrategySection from '../components/BrandingStrategySection';
-import Footer from '../components/Footer';
+import SolutionsProjectsCarousel from '../components/Solutions/SolutionsProjectsCarousel';
 
 const OurSolutionsPage = () => {
     return (
         <div className="bg-[#050505] text-white min-h-screen">
-            <Navbar />
             <OurSolutionsHero />
             <BrandingStrategySection />
-            <Footer />
+            <SolutionsProjectsCarousel />
         </div>
     );
 };
