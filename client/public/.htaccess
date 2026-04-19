@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  
+  # Rule 1: If it's already exactly index.html, do nothing.
+  RewriteRule ^index\.html$ - [L]
+  
+  # Rule 2: If the request doesn't match a real file...
+  RewriteCond %{REQUEST_FILENAME} !-f
+  
+  # Rule 3: ...and it doesn't match a real directory...
+  RewriteCond %{REQUEST_FILENAME} !-d
+  
+  # Action: Serve index.html instead to allow React Router to handle it
+  RewriteRule . /index.html [L]
+</IfModule>
