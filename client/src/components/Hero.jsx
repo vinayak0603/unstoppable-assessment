@@ -12,7 +12,7 @@ const Hero = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-[#030303] via-[#030303]/70 to-transparent z-0 pointer-events-none"></div>
 
             {/* Hero Content */}
-            <main className="relative z-10 flex-grow flex flex-col justify-center px-5 md:px-12 lg:px-20 max-w-[80rem] mt-24 md:mt-32 pb-12">
+            <main className="relative z-10 flex-grow flex flex-col justify-center px-5 md:px-12 lg:px-20 max-w-[80rem] mt-18 md:mt-25 pb-12">
                 <h1 className="text-[2.5rem] sm:text-[3.5rem] md:text-5xl lg:text-[4.5rem] font-bold text-white leading-[1.1] tracking-tight mb-6 max-w-4xl">
                     Your St<span className="text-[#da251d] italic font-normal tracking-tight" style={{ fontFamily: "'Playfair Display', serif" }}>ra</span>tegic Growth<br />
                     Partner in Business
@@ -34,7 +34,7 @@ const Hero = () => {
 
             {/* Redesigned Footer: Partners + Awards */}
             <footer className="relative z-10 px-5 md:px-12 lg:px-20 pb-10 md:pb-16 flex flex-col lg:flex-row lg:items-end justify-between gap-10">
-                
+
                 {/* Left: Partners */}
                 <div className="flex flex-col gap-5">
                     <span className="text-[#888888] text-[13px] font-medium tracking-wide">Partnered with</span>
@@ -64,9 +64,9 @@ const Hero = () => {
 
                 {/* Right: Awards Integration */}
                 <div className="flex-shrink-0 lg:max-w-[45%] xl:max-w-none">
-                    <img 
-                        src={awards} 
-                        alt="Awards: Best Marketing Maestro & Best Stall Design" 
+                    <img
+                        src={awards}
+                        alt="Awards: Best Marketing Maestro & Best Stall Design"
                         className="h-20 sm:h-24 md:h-28 lg:h-32 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
                     />
                 </div>

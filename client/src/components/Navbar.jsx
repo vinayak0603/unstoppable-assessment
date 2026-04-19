@@ -17,7 +17,7 @@ const Navbar = () => {
 
                 {/* Nav Links - Desktop */}
                 <div className="hidden lg:flex items-center gap-10 text-[15px] font-medium text-gray-300">
-                    <a href="#" className="hover:text-white transition-all duration-300 relative group">
+                    <a href="/our-solutions" className="hover:text-white transition-all duration-300 relative group">
                         Our Solutions
                         <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#da251d] transition-all duration-300 group-hover:w-full"></span>
                     </a>
@@ -59,7 +59,7 @@ const Navbar = () => {
             {/* Mobile Menu Overlay */}
             <div className={`lg:hidden fixed inset-x-0 top-0 bg-[#050505]/fb backdrop-blur-2xl transition-all duration-500 overflow-hidden ${menuOpen ? 'h-screen opacity-100' : 'h-0 opacity-0'}`}>
                 <div className="flex flex-col items-center justify-center h-full gap-8 px-10 text-center">
-                    <a href="#" className="text-2xl font-bold text-white" onClick={() => setMenuOpen(false)}>Our Solutions</a>
+                    <a href="/our-solutions" className="text-2xl font-bold text-white" onClick={() => setMenuOpen(false)}>Our Solutions</a>
                     <a href="#" className="text-2xl font-bold text-white" onClick={() => setMenuOpen(false)}>Why Us</a>
                     <a href="#" className="text-2xl font-bold text-white" onClick={() => setMenuOpen(false)}>Clientele</a>
                     <a href="#" className="text-2xl font-bold text-white" onClick={() => setMenuOpen(false)}>Communities</a>
