@@ -4,10 +4,12 @@ import OurSolutionsPage from "./pages/OurSolutionsPage";
 import CommunitiesPage from "./pages/CommunitiesPage";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import DisclaimerPopup from "./components/DisclaimerPopup";
 
 function App() {
   return (
     <Router>
+      <DisclaimerPopup />
       <Navbar />
       <Routes>
         <Route path="/" element={<LandingPage />} />

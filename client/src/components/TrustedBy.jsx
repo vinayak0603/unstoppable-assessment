@@ -10,7 +10,7 @@ const TrustedBy = () => {
     // Array designed to match the 2-row layout (10 items total) to replicate the look of the provided image perfectly.
     const logos = [
         client1, client2, client3, client4, client5,
-        client5, client3, client4, client1, client2
+        client6, client3, client4, client1, client2
     ];
 
     return (
@@ -30,7 +30,10 @@ const TrustedBy = () => {
                 {/* Logos Grid */}
                 <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 gap-y-8 md:gap-y-12 gap-x-4 md:gap-x-12 place-items-center mt-10 md:mt-24 max-w-5xl mx-auto w-full">
                     {logos.map((logo, index) => (
-                        <div key={index} className="flex justify-center items-center w-full h-full">
+                        <div 
+                            key={index} 
+                            className={`flex justify-center items-center w-full h-full ${index === logos.length - 1 ? 'col-start-2 md:col-auto' : ''}`}
+                        >
                             <img
                                 src={logo}
                                 alt={`Client logo ${index + 1}`}
