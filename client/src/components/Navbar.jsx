@@ -25,7 +25,7 @@ const Navbar = () => {
                         Why Us
                         <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#da251d] transition-all duration-300 group-hover:w-full"></span>
                     </a>
-                    <a href="#" className="hover:text-white transition-all duration-300 relative group">
+                    <a href="/clientele" className="hover:text-white transition-all duration-300 relative group">
                         Clientele
                         <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#da251d] transition-all duration-300 group-hover:w-full"></span>
                     </a>
@@ -73,7 +73,7 @@ const Navbar = () => {
                         <div className="w-full h-[1px] bg-white/10"></div>
                         <a href="#" className="text-[16px] uppercase tracking-[0.2em] font-medium text-gray-300 hover:text-white py-5 w-full text-center transition-colors" onClick={() => setMenuOpen(false)}>Why Us</a>
                         <div className="w-full h-[1px] bg-white/10"></div>
-                        <a href="#" className="text-[16px] uppercase tracking-[0.2em] font-medium text-gray-300 hover:text-white py-5 w-full text-center transition-colors" onClick={() => setMenuOpen(false)}>Clientele</a>
+                        <a href="/clientele" className="text-[16px] uppercase tracking-[0.2em] font-medium text-gray-300 hover:text-white py-5 w-full text-center transition-colors" onClick={() => setMenuOpen(false)}>Clientele</a>
                         <div className="w-full h-[1px] bg-white/10"></div>
                         <a href="/communities" className="text-[16px] uppercase tracking-[0.2em] font-medium text-gray-300 hover:text-white py-5 w-full text-center transition-colors" onClick={() => setMenuOpen(false)}>Communities</a>
                         <div className="w-full h-[1px] bg-white/10"></div>
