@@ -69,7 +69,7 @@ const Footer = () => {
                         <a href="#" className="hover:text-white transition-colors">Our Work</a>
                         <a href="#" className="hover:text-white transition-colors">Experience</a>
                         <a href="#" className="hover:text-white transition-colors">Expertise</a>
-                        <a href="#" className="hover:text-white transition-colors">Career</a>
+                        <a href="/career" className="hover:text-white transition-colors">Career</a>
                         <a href="#" className="hover:text-white transition-colors">Blogs</a>
                     </div>
                 </div>

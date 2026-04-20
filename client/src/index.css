@@ -11,3 +11,21 @@ body {
   color: #ffffff;
   font-family: var(--font-sans);
 }
+
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-33.3333%);
+  }
+}
+
+@keyframes card-border-glow {
+  0%   { box-shadow: 0 0 0px 0px transparent; }
+  8%   { box-shadow: 0 0 60px 20px rgba(180,18,18,0.15), 0 0 120px 40px rgba(130,10,10,0.07); }
+  58%  { box-shadow: 0 0 60px 20px rgba(180,18,18,0.15), 0 0 120px 40px rgba(130,10,10,0.07); }
+  72%  { box-shadow: 0 0 0px 0px transparent; }
+  100% { box-shadow: 0 0 0px 0px transparent; }
+}
