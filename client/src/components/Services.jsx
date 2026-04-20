@@ -3,88 +3,117 @@ import card1 from '../assets/cards/card1.png';
 import card2 from '../assets/cards/card2.png';
 import card3 from '../assets/cards/card3.png';
 
+const SERVICES_DATA = [
+    {
+        id: 'brand-strategy',
+        title: "Brand Strategy\n& Identity",
+        image: card1,
+        description: "Build brands that stand out, scale up, and stay relevant.",
+        tags: ["Brand Audits", "Visual Identity", "Brand Guidelines", "Positioning & Messaging", "Verbal Identity"]
+    },
+    {
+        id: 'design-creative',
+        title: "Design & Creative\nCommunication",
+        image: card2,
+        description: "Translate strategy into powerful, scroll-stopping creativity.",
+        tags: ["Logo Design", "Web Design", "UI/UX", "Graphic Design", "Motion Graphics"]
+    },
+    {
+        id: 'digital-marketing',
+        title: "Digital & Performance\nMarketing",
+        image: card3,
+        description: "Turn attention into action with data-driven growth.",
+        tags: [
+            "Social Media & Influencer Marketing",
+            "Digital Campaigns",
+            "Media Buying",
+            "SEO / SEM / Display Ads",
+            "CRM, Automation & Lead Generation"
+        ]
+    }
+];
+
 const Services = () => {
     return (
-        <section className="bg-black py-10 md:py-16 flex flex-col items-center overflow-hidden justify-center relative font-sans">
-            {/* SERVICES SECTION: Feature Cards with Transparent Blur Folder UI */}
-            <div className="relative w-full max-w-[65rem] mx-auto flex flex-col items-center z-50">
+        <section className="bg-black py-10 md:py-20 flex flex-col items-center overflow-hidden justify-center relative font-sans">
+            {/* SERVICES SECTION: Glassmorphism Folder UI */}
+            <div className="relative w-full max-w-[68rem] mx-auto flex flex-col items-center z-50">
 
                 {/* 3-Card Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8 w-full px-4 md:px-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 lg:gap-10 w-full px-4 md:px-8">
+                    {SERVICES_DATA.map((service) => (
+                        <div
+                            key={service.id}
+                            className="relative w-full aspect-[4/4.5] sm:aspect-[4/5] md:aspect-[4/5.2] rounded-[2.8rem] overflow-hidden bg-[#0c0c0c] group shadow-[0_25px_60px_rgba(0,0,0,0.4)] cursor-pointer"
+                        >
+                            {/* Sliding Cream Background */}
+                            <div className="absolute inset-0 bg-[#e6d7c3] transform translate-y-full group-hover:translate-y-0 transition-transform duration-450 ease-out z-0"></div>
 
-                    {/* Card 1 */}
-                    <div className="relative w-full aspect-[4/3] sm:aspect-[4/4] md:aspect-[4/4.2] lg:aspect-[4/4.5] xl:aspect-[4/4.2] rounded-[1.5rem] overflow-hidden bg-[#0c0c0c] group shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-                        <img src={card1} alt="Brand Strategy" className="absolute top-0 left-0 w-full h-full object-cover opacity-90 group-hover:scale-105 transition-all duration-700 pointer-events-none" />
-
-                        <div className="absolute bottom-0 left-0 right-0 h-[60%] backdrop-blur-xl bg-gradient-to-b from-[#444444]/40 via-[#262626]/80 to-[#121212]/95"
-                            style={{
-                                WebkitMaskImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 H35 C45,0 45,35 60,35 H100 V100 H0 Z' fill='black'/%3E%3C/svg%3E")`,
-                                maskImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 H35 C45,0 45,35 60,35 H100 V100 H0 Z' fill='black'/%3E%3C/svg%3E")`,
-                                WebkitMaskSize: '100% 100%',
-                                maskSize: '100% 100%'
-                            }}>
-                            <div className="absolute inset-x-0 bottom-6 md:bottom-8 px-6 md:px-7">
-                                <h3 className="text-[18px] md:text-[21px] font-bold text-white mb-2 leading-tight tracking-tight">Brand Strategy<br />& Identity</h3>
-                                <p className="text-[#a0a0a0] text-[11.5px] md:text-[12.5px] leading-relaxed">Build brands that stand out, scale up, and stay relevant.</p>
+                            {/* Inner Image Container */}
+                            <div className="absolute top-0 left-0 w-full h-[80%] p-3 md:p-5 overflow-hidden z-10 transition-transform duration-500 group-hover:rotate-2">
+                                <img
+                                    src={service.image}
+                                    alt={service.title}
+                                    className="w-full h-full object-cover rounded-[1.8rem] transition-all duration-700 cubic-bezier(0.4, 0, 0.2, 1) group-hover:scale-[1.03] pointer-events-none"
+                                />
                             </div>
-                        </div>
 
-                        <svg className="absolute bottom-0 left-0 w-full h-[60%] pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
-                            <path d="M0,0 H35 C45,0 45,35 60,35 H100" fill="none" stroke="rgba(255,255,255,0.2)" vectorEffect="non-scaling-stroke" strokeWidth="1.5" />
-                        </svg>
-                    </div>
+                            {/* Folder Layer UI - Glassmorphism Transition (Transparent & Blur) */}
+                            <div
+                                className="absolute bottom-0 left-0 right-0 h-[80%] backdrop-blur-2xl bg-white/5 border-t border-white/10 transition-transform duration-[450ms] ease-out translate-y-[45%] group-hover:translate-y-0 shadow-[0_-10px_40px_rgba(0,0,0,0.2)] z-20"
+                                style={{
+                                    WebkitMaskImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 H42 C52,0 48,15 58,15 H100 V100 H0 Z' fill='black'/%3E%3C/svg%3E")`,
+                                    maskImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 H42 C52,0 48,15 58,15 H100 V100 H0 Z' fill='black'/%3E%3C/svg%3E")`,
+                                    WebkitMaskSize: '100% 100%',
+                                    maskSize: '100% 100%'
+                                }}
+                            >
+                                {/* Folder Inner Content */}
+                                <div className="absolute inset-0 pt-[16%] md:pt-[20%] px-6 md:px-8 flex flex-col items-start text-left">
+                                    <h3 className="text-[19px] md:text-[22px] font-bold text-white mb-2 leading-[1.2] tracking-tight whitespace-pre-line group-hover:scale-[1.02] transition-transform duration-500 origin-left">
+                                        {service.title}
+                                    </h3>
+                                    <p className="text-white text-[12px] md:text-[13px] leading-relaxed mb-6 max-w-[90%] font-normal">
+                                        {service.description}
+                                    </p>
 
-                    {/* Card 2 */}
-                    <div className="relative w-full aspect-[4/3] sm:aspect-[4/4] md:aspect-[4/4.2] lg:aspect-[4/4.5] xl:aspect-[4/4.2] rounded-[1.5rem] overflow-hidden bg-[#0c0c0c] group shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-                        <img src={card2} alt="Design & Creative" className="absolute top-0 left-0 w-full h-full object-cover opacity-90 group-hover:scale-105 transition-all duration-700 pointer-events-none" />
-
-                        <div className="absolute bottom-0 left-0 right-0 h-[60%] backdrop-blur-xl bg-gradient-to-b from-[#4a4a4a]/40 via-[#262626]/80 to-[#121212]/95"
-                            style={{
-                                WebkitMaskImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 H35 C45,0 45,35 60,35 H100 V100 H0 Z' fill='black'/%3E%3C/svg%3E")`,
-                                maskImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 H35 C45,0 45,35 60,35 H100 V100 H0 Z' fill='black'/%3E%3C/svg%3E")`,
-                                WebkitMaskSize: '100% 100%',
-                                maskSize: '100% 100%'
-                            }}>
-                            <div className="absolute inset-x-0 bottom-6 md:bottom-8 px-6 md:px-7">
-                                <h3 className="text-[18px] md:text-[21px] font-bold text-white mb-2 leading-tight tracking-tight">Design & Creative<br />Communication</h3>
-                                <p className="text-[#a0a0a0] text-[11.5px] md:text-[12.5px] leading-relaxed">Translate strategy into powerful, scroll-stopping creativity.</p>
+                                    {/* Revealable Tags */}
+                                    <div className="flex flex-wrap gap-2 transition-all duration-500 delay-100 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0">
+                                        {service.tags.map((tag, i) => (
+                                            <span
+                                                key={i}
+                                                className="text-[9.5px] md:text-[10.5px] font-medium text-white/90 px-3.5 py-1.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-md hover:bg-white/20 hover:border-white/40 transition-colors whitespace-nowrap"
+                                            >
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
                             </div>
+
+                            {/* Border Stroke */}
+                            <svg
+                                className="absolute bottom-0 left-0 w-full h-[80%] pointer-events-none transition-transform duration-[450ms] ease-out translate-y-[45%] group-hover:translate-y-0 z-20"
+                                viewBox="0 0 100 100"
+                                preserveAspectRatio="none"
+                            >
+                                <path
+                                    d="M0,0 H42 C52,0 48,15 58,15 H100"
+                                    fill="none"
+                                    stroke="rgba(255,255,255,0.25)"
+                                    vectorEffect="non-scaling-stroke"
+                                    strokeWidth="1.2"
+                                />
+                            </svg>
                         </div>
-
-                        <svg className="absolute bottom-0 left-0 w-full h-[60%] pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
-                            <path d="M0,0 H35 C45,0 45,35 60,35 H100" fill="none" stroke="rgba(255,255,255,0.2)" vectorEffect="non-scaling-stroke" strokeWidth="1.5" />
-                        </svg>
-                    </div>
-
-                    {/* Card 3 */}
-                    <div className="relative w-full aspect-[4/3] sm:aspect-[4/4] md:aspect-[4/4.2] lg:aspect-[4/4.5] xl:aspect-[4/4.2] rounded-[1.5rem] overflow-hidden bg-[#0c0c0c] group shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-                        <img src={card3} alt="Digital Marketing" className="absolute top-0 left-0 w-full h-full object-cover opacity-90 group-hover:scale-105 transition-all duration-700 pointer-events-none" />
-
-                        <div className="absolute bottom-0 left-0 right-0 h-[60%] backdrop-blur-xl bg-gradient-to-b from-[#4a4a4a]/40 via-[#262626]/80 to-[#121212]/95"
-                            style={{
-                                WebkitMaskImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 H35 C45,0 45,35 60,35 H100 V100 H0 Z' fill='black'/%3E%3C/svg%3E")`,
-                                maskImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 H35 C45,0 45,35 60,35 H100 V100 H0 Z' fill='black'/%3E%3C/svg%3E")`,
-                                WebkitMaskSize: '100% 100%',
-                                maskSize: '100% 100%'
-                            }}>
-                            <div className="absolute inset-x-0 bottom-6 md:bottom-8 px-6 md:px-7">
-                                <h3 className="text-[18px] md:text-[21px] font-bold text-white mb-2 leading-tight tracking-tight">Digital & Performance<br />Marketing</h3>
-                                <p className="text-[#a0a0a0] text-[11.5px] md:text-[12.5px] leading-relaxed">Turn attention into action with data-driven growth.</p>
-                            </div>
-                        </div>
-
-                        <svg className="absolute bottom-0 left-0 w-full h-[60%] pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
-                            <path d="M0,0 H35 C45,0 45,35 60,35 H100" fill="none" stroke="rgba(255,255,255,0.2)" vectorEffect="non-scaling-stroke" strokeWidth="1.5" />
-                        </svg>
-                    </div>
-
+                    ))}
                 </div>
 
-                {/* View all Services Button */}
-                <div className="mt-14 z-50">
-                    <button className="bg-[#b30000] border border-[#ff3333]/50 text-white rounded-full px-8 py-3.5 flex items-center gap-3 text-[15px] hover:bg-[#a60000] transition-colors relative z-20 shadow-[0_0_15px_rgba(204,0,0,0.5)]">
+                {/* View all Services */}
+                <div className="mt-16 z-50">
+                    <button className="bg-[#b30000] border border-[#ff3333]/40 text-white rounded-full px-10 py-4 flex items-center gap-3 text-[14.5px] font-semibold hover:bg-[#a60000] transition-all hover:scale-[1.03] active:scale-[0.97] shadow-[0_5px_25px_rgba(204,0,0,0.5)]">
                         View all Services
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                             <line x1="5" y1="12" x2="19" y2="12"></line>
                             <polyline points="12 5 19 12 12 19"></polyline>
                         </svg>
