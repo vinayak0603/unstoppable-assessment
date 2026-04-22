@@ -3,7 +3,7 @@ import Hero from '../components/Hero';
 import TrustedBy from '../components/TrustedBy';
 import TruePartner from '../components/TruePartner';
 import IntegratedGrowth from '../components/IntegratedGrowth';
-import Visions from '../components/Visions';
+import VisionToVelocity from '../components/clientele/VisionToVelocity';
 import Services from '../components/Services';
 import WhoWeWork from '../components/WhoWeWork';
 import Testimonials from '../components/Testimonials';
@@ -15,7 +15,7 @@ const LandingPage = () => {
             <TrustedBy />
             <TruePartner />
             <IntegratedGrowth />
-            <Visions />
+            <VisionToVelocity />
             <Services />
             <WhoWeWork />
             <Testimonials />
